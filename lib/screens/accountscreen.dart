@@ -32,9 +32,6 @@ class _AccountScreenState extends State<AccountScreen> {
 
   @override
   Widget build(BuildContext context) {
-
-
-
     return SafeArea(
       child: Scaffold(
         backgroundColor: shadowColor,
@@ -164,7 +161,6 @@ class _AccountScreenState extends State<AccountScreen> {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-
                   Expanded(
                       child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -172,54 +168,72 @@ class _AccountScreenState extends State<AccountScreen> {
                       Container(
                           margin: const EdgeInsets.all(6),
                           decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(35),
-                          gradient: const LinearGradient(
-                            colors: [redColor, orangeRedColor],
+                            borderRadius: BorderRadius.circular(35),
+                            gradient: const LinearGradient(
+                              colors: [redColor, orangeRedColor],
+                            ),
                           ),
-                        ),
-                        padding: const EdgeInsets.all(8),
-                        child: const Icon(Icons.room_service,color: whiteColor,)),
-                      const SizedBox(height: 4,),
-                      const Text("my services",style: TextStyle(color: blackColor),)
+                          padding: const EdgeInsets.all(8),
+                          child: const Icon(
+                            Icons.room_service,
+                            color: whiteColor,
+                          )),
+                      const SizedBox(
+                        height: 4,
+                      ),
+                      const Text(
+                        "my services",
+                        style: TextStyle(color: blackColor),
+                      )
                     ],
                   )),
-
                   Expanded(
-                      child: Column(
-                        children: [
-                          Stack(
-                            children: <Widget>[
-                              Container(
-                                  margin: const EdgeInsets.all(6),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(35),
-                                    gradient: const LinearGradient(
-                                      colors: [redColor, orangeColor],
-                                    ),
+                    child: Column(
+                      children: [
+                        Stack(
+                          children: <Widget>[
+                            Container(
+                                margin: const EdgeInsets.all(6),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(35),
+                                  gradient: const LinearGradient(
+                                    colors: [redColor, orangeColor],
                                   ),
-                                  padding: const EdgeInsets.all(8),
-                                  child: const Icon(Icons.notifications_none,color: whiteColor,)),
-                              Positioned(
+                                ),
+                                padding: const EdgeInsets.all(8),
+                                child: const Icon(
+                                  Icons.notifications_none,
+                                  color: whiteColor,
+                                )),
+                            Positioned(
                                 top: 0.0,
                                 right: 0,
                                 child: Container(
                                   alignment: Alignment.center,
                                   width: 17,
                                   height: 17,
-                                    padding: const EdgeInsets.all(3),
-                                    margin: const EdgeInsets.all(3),
-                                    decoration: BoxDecoration(
-                                        color: Colors.blue,
-                                        borderRadius: BorderRadius.circular(10)),
-                                    child:const Text("1",style: TextStyle(color: whiteColor,fontSize: 11),),
-                                )
-                              )
-                            ],
-                          ),
-                          const SizedBox(height: 4,),
-                          const Text("notification",style: TextStyle(color: blackColor),)
-                        ],
-                      ),
+                                  padding: const EdgeInsets.all(3),
+                                  margin: const EdgeInsets.all(3),
+                                  decoration: BoxDecoration(
+                                      color: Colors.blue,
+                                      borderRadius: BorderRadius.circular(10)),
+                                  child: const Text(
+                                    "1",
+                                    style: TextStyle(
+                                        color: whiteColor, fontSize: 11),
+                                  ),
+                                ))
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 4,
+                        ),
+                        const Text(
+                          "notification",
+                          style: TextStyle(color: blackColor),
+                        )
+                      ],
+                    ),
                   ),
                   Expanded(
                       child: Column(
@@ -228,15 +242,23 @@ class _AccountScreenState extends State<AccountScreen> {
                       Container(
                           margin: const EdgeInsets.all(6),
                           decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(35),
-                          gradient: const LinearGradient(
-                            colors: [primaryColor, blueColor],
+                            borderRadius: BorderRadius.circular(35),
+                            gradient: const LinearGradient(
+                              colors: [primaryColor, blueColor],
+                            ),
                           ),
-                        ),
-                        padding: const EdgeInsets.all(8),
-                        child: const Icon(Icons.settings,color: whiteColor,)),
-                      const SizedBox(height: 4,),
-                      const Text("settings",style: TextStyle(color: blackColor),)
+                          padding: const EdgeInsets.all(8),
+                          child: const Icon(
+                            Icons.settings,
+                            color: whiteColor,
+                          )),
+                      const SizedBox(
+                        height: 4,
+                      ),
+                      const Text(
+                        "settings",
+                        style: TextStyle(color: blackColor),
+                      )
                     ],
                   ))
                 ],
@@ -248,7 +270,8 @@ class _AccountScreenState extends State<AccountScreen> {
                   margin: const EdgeInsets.all(10),
                   padding: const EdgeInsets.all(15),
                   decoration: BoxDecoration(
-                      color: whiteColor, borderRadius: BorderRadius.circular(15)),
+                      color: whiteColor,
+                      borderRadius: BorderRadius.circular(15)),
                   child: SingleChildScrollView(
                     child: Column(
                       children: List.generate(servicesList.length, (index) {
@@ -259,20 +282,29 @@ class _AccountScreenState extends State<AccountScreen> {
                               Container(
                                 padding: const EdgeInsets.all(10),
                                 decoration: BoxDecoration(
-                                  color: shadowColor,
-                                  borderRadius: BorderRadius.circular(30)
+                                    color: shadowColor,
+                                    borderRadius: BorderRadius.circular(30)),
+                                child: Icon(
+                                  servicesList[index].icon,
                                 ),
-                                child: Icon(servicesList[index].icon,),
                               ),
                               Container(
                                 padding: const EdgeInsets.all(10),
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30)
+                                    borderRadius: BorderRadius.circular(30)),
+                                child: Text(
+                                  servicesList[index].servicesName,
+                                  style: const TextStyle(
+                                      color: blackColor,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
                                 ),
-                                child: Text(servicesList[index].servicesName,style: const TextStyle(color: blackColor,fontSize: 18,fontWeight: FontWeight.bold),),
                               ),
                               const Spacer(),
-                              const Icon(Icons.arrow_forward_ios,color: grayColor,),
+                              const Icon(
+                                Icons.arrow_forward_ios,
+                                color: grayColor,
+                              ),
                             ],
                           ),
                         );
@@ -293,6 +325,5 @@ class ServicesData {
   final IconData icon;
   final String servicesName;
 
-  ServicesData(this.icon,this.servicesName);
-
+  ServicesData(this.icon, this.servicesName);
 }
